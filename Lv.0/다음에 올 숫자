@@ -1,0 +1,21 @@
+class Solution {
+    public int solution(int[] common) {
+        int answer = 0;
+        boolean ap = true;
+        int gap = common[1] - common[0];
+        int length = common.length;
+        
+        for (int i = 1; i < common.length; i++) {
+            if (gap != common[i] - common[i - 1]) {
+                ap = false;
+                break;
+            }
+        }
+        if (ap == false) 
+            answer = common[length - 1] * (common[length - 1] / common[length - 2]);
+        else
+            answer = common[length - 1] + gap;
+        
+        return answer;
+    }
+}
