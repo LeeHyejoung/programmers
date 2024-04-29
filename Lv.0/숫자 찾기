@@ -1,0 +1,15 @@
+class Solution {
+    public int solution(int num, int k) {
+        int answer = 0;
+        Integer n = num;
+        String str = n.toString();
+        Integer value = k;
+        
+        answer = str.indexOf(value.toString());
+        
+        if (answer != -1)
+            answer++;
+        
+        return answer;
+    }
+}
