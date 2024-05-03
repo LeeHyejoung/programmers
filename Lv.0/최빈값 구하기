@@ -1,0 +1,30 @@
+class Solution {
+    public int solution(int[] array) {
+        int answer = -1;
+        int[] count = new int[1000];
+
+        for (int i = 0; i < array.length; i++) {
+            count[array[i]]++;    
+        }
+        
+        int bigIdx = -1;
+        int bigNum = -1;
+        boolean flag = true;
+        
+        for (int i = 0; i < count.length; i++) {
+            if (count[i] == bigNum) {
+                flag = false;
+            }
+            else if (count[i] > bigNum) {
+                flag = true;
+                bigIdx = i;
+                bigNum = count[i];
+            }
+        }
+        
+        if (flag)
+            return bigIdx;
+        else
+            return -1;
+    }
+}
