@@ -1,0 +1,35 @@
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        
+        answer = getTen(getThree(n));
+        
+        return answer;
+    }
+    
+    public String getThree(int n) {
+        String result = "";
+        
+        while (n > 0) {
+            if (n % 3 == 0)
+                result += "0";
+            else
+                result += "" + (n % 3);
+            n /= 3;
+        }
+        
+        return result;
+    }
+    
+    public int getTen(String str) {
+        int result = 0;
+        int threePow = 1;
+        
+        for (int i = str.length() - 1; i >= 0; i--) {
+            result += (str.charAt(i) - '0') * threePow;
+            threePow *= 3;
+        }
+        
+        return result;
+    }
+}
