@@ -1,0 +1,29 @@
+class Solution {
+    boolean solution(String s) {
+        boolean answer = true;
+        char ch;
+        int pCount = 0;
+        int yCount = 0;
+        
+        for (int i = 0; i < s.length(); i++) {
+            ch = s.charAt(i);
+            
+            switch (ch) {
+                case 'p':
+                case 'P':
+                    pCount++;
+                    break;
+                case 'y':
+                case 'Y':
+                    yCount++;
+                    break;
+            }
+        }
+        
+        if (pCount != yCount) {
+            answer = false;
+        }
+
+        return answer;
+    }
+}
