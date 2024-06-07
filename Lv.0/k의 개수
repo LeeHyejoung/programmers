@@ -1,0 +1,16 @@
+class Solution {
+    public int solution(int i, int j, int k) {
+        int answer = 0;
+        char ch = Character.forDigit(k, 10);
+        
+        while (i <= j) {
+            String str = i + "";
+            
+            answer += str.length() - str.replace(String.valueOf(ch), "").length();
+            
+            i++;
+        }
+        
+        return answer;
+    }
+}
