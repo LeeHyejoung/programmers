@@ -1,0 +1,20 @@
+import java.util.Arrays;
+
+class Solution {
+    public int solution(String before, String after) {
+        int answer = 0;
+        
+        char[] beforeCh = before.toCharArray();
+        Arrays.sort(beforeCh);
+        char[] afterCh = after.toCharArray();
+        Arrays.sort(afterCh);
+        
+        before = new String(beforeCh);
+        after = new String(afterCh);
+        
+        if (before.equals(after))
+            answer = 1;
+        
+        return answer;
+    }
+}
