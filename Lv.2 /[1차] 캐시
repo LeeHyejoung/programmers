@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+
+class Solution {
+    public int solution(int cacheSize, String[] cities) {
+        int answer = 0;
+        ArrayList<String> list = new ArrayList<String>(cacheSize);
+
+        for (int i = 0; i < cities.length; i++) {
+            answer += cache(cities[i].toLowerCase(), list, cacheSize);
+        }
+        
+        return answer;
+    }
+    
+    public int cache(String str, ArrayList<String> list, int size) {
+        if (size == 0)
+            return 5;
+        if (list.contains(str) == false) {
+            if (list.size() == size && !list.isEmpty()) {
+                list.remove(0);
+            }
+            list.add(str);
+            return 5;
+        }
+        else {
+            list.remove(str);
+            list.add(str);
+            return 1;
+        }
+    }
+}
