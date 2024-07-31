@@ -1,0 +1,17 @@
+class Solution {
+    public int solution(int a, int b, int n) {
+        int answer = coke(a, b, n);
+        
+        return answer;
+    }
+    
+    public int coke(int a, int b, int n) {
+        if (n < a) {
+            return 0;
+        }
+        else {            
+            return coke(a, b, n - (n / a * a) + (n / a * b)) + n / a * b;
+        }
+    }
+    
+}
