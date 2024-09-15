@@ -1,0 +1,6 @@
+select count(*) as count
+from (
+    SELECT distinct name
+    FROM ANIMAL_INS
+    WHERE NAME is not null
+)
