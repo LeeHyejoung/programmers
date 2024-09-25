@@ -1,0 +1,11 @@
+def solution(n):
+    s = str(n)
+    list = []
+    
+    for i in s:
+        list.append(i)
+        
+    list.sort(reverse = True)
+    answer = int("".join(list))
+    
+    return answer
