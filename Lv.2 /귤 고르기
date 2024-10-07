@@ -1,0 +1,20 @@
+from collections import defaultdict
+
+def solution(k, tangerine):
+    count_dict = defaultdict(lambda : 0)
+    tangerine = sorted(tangerine)
+    
+    for t in tangerine:
+        count_dict[t] += 1
+    
+    sorted_dict = sorted(count_dict.items(), key = lambda item : item[1], reverse = True)
+    
+    t = 0
+    count = 0
+    for i in sorted_dict:
+        if (t >= k):
+            break
+        t += i[1]
+        count += 1
+
+    return count
