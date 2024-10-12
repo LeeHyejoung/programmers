@@ -1,0 +1,15 @@
+def solution(n):
+    answer = n + 1
+    n_one = two(n).count('1')
+    while True:
+        if (n_one == two(answer).count('1')):
+            break
+        answer += 1
+        
+    return answer
+
+def two(n):
+    if n < 2:
+        return str(n)
+    else:
+        return str(n % 2) + two(n // 2)
