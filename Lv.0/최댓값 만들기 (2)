@@ -1,0 +1,10 @@
+def solution(numbers):
+    numbers = sorted(numbers)
+
+    n1 = numbers[0] * numbers[1]
+    n2 = numbers[len(numbers) - 1] * numbers[len(numbers) - 2]
+    
+    if n1 > n2:
+        return n1
+    else:
+        return n2
