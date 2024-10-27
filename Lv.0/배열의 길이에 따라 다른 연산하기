@@ -1,0 +1,13 @@
+def solution(arr, n):
+    answer = arr
+    
+    if (len(arr) % 2 == 1):
+        index = 0
+    else:
+        index = 1
+        
+    for i in range(len(arr)):
+            if i % 2 == index:
+                answer[i] += n
+                
+    return answer
