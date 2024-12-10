@@ -1,0 +1,6 @@
+def solution(age):
+    answer = ''
+    age = str(age)
+    for a in age:
+        answer += chr(ord(a) + 49)
+    return answer
