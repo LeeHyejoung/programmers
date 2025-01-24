@@ -1,0 +1,11 @@
+def solution(n, slicer, num_list):
+    a = 0
+    if n != 1:
+        a = slicer[0]
+    b = len(num_list)
+    if n != 2:
+        b = slicer[1] + 1
+    c = 1
+    if n == 4:
+        c = slicer[2]
+    return num_list[a: b: c]
